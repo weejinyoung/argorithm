@@ -2,11 +2,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-
 class SelectTwoThenPlusThem {
-
-    public static void main(String[] args) {
-        int[] numbers = {1,2,3,4,5};
+    public ArrayList<Integer> solution(int[] numbers) {
         int size = numbers.length;
         Set<Integer> resultSet = new HashSet<>();
 
@@ -16,13 +13,10 @@ class SelectTwoThenPlusThem {
             }
         }
 
-        ArrayList<Integer> resultList = new ArrayList<>(resultSet);
-        Collections.sort(resultList);
+        ArrayList<Integer> answer = new ArrayList<>(resultSet);
+        Collections.sort(answer);
 
-        int[] answer = new int[resultList.size()];
-        int k = 0;
-        for (int result : resultList) {
-            answer[k++] = result;
-        }
+        return answer;
     }
 }
+
