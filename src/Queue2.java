@@ -4,6 +4,7 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
 
+
 public class Queue2 {
     public static void main(String[] args) throws IOException {
         Queue<Integer> queue = new LinkedList<>();
