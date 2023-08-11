@@ -7,23 +7,23 @@ public class Virus {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int colleague = Integer.parseInt(br.readLine());
-        int listSize = Integer.parseInt(br.readLine());
+        int computer = Integer.parseInt(br.readLine());
+        int edgeNum = Integer.parseInt(br.readLine());
 
-        int[][] list = new int[listSize][2];
-        for (int i = 0; i < listSize; i++) {
+        int[][] edges = new int[edgeNum][2];
+        for (int i = 0; i < edgeNum; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
-            list[i][0] = Integer.parseInt(st.nextToken());
-            list[i][1] = Integer.parseInt(st.nextToken());
+            edges[i][0] = Integer.parseInt(st.nextToken());
+            edges[i][1] = Integer.parseInt(st.nextToken());
         }
 
         Map<Integer, ArrayList<Integer>> graph = new HashMap<>();
 
-        for(int i = 1 ; i <= colleague ; i++) {
+        for(int i = 1 ; i <= computer ; i++) {
             graph.put(i, new ArrayList<>());
         }
 
-        for(int[] edge : list) {
+        for(int[] edge : edges) {
             graph.get(edge[0]).add(edge[1]);
             graph.get(edge[1]).add(edge[0]);
         }
