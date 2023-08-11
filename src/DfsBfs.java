@@ -82,23 +82,16 @@ public class DfsBfs {
 
         while (!queue.isEmpty()) {
 
-            int current = queue.peek();
-            boolean hasNeighbor = false;
+            int current = queue.poll();
             ArrayList<Integer> neighbors = graph.get(current);
             Collections.sort(neighbors);
 
             for(int neighbor : neighbors) {
                 if (!visited.contains(neighbor)) {
-                    hasNeighbor = true;
                     queue.add(neighbor);
                     visited.add(neighbor);
                     answer.append(neighbor).append(" ");
-                    break;
                 }
-            }
-
-            if(!hasNeighbor) {
-                queue.poll();
             }
         }
 
