@@ -3,13 +3,13 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-class ReceivingReportResult {
+class ReceivingReportResults {
     public int[] solution(String[] id_list, String[] report, int k) {
         Map<String, Set<String>> reporterMap = new HashMap<>();
         Map<String, Integer> reporteeMap = new HashMap<>();
         Map<String, Integer> answerMap = new HashMap<>();
         int[] answer = new int[id_list.length];
-        
+
         // 초기화
         for (String id : id_list) {
             reporterMap.put(id, new HashSet<>());
