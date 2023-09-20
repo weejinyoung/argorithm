@@ -2,10 +2,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class SkillTree {
-    public static void main(String[] args) {
-        String skill = "CBD";
-        String[] skill_trees = {"C", "D", "CB", "BDA"};
+class SkillTree {
+    public int solution(String skill, String[] skill_trees) {
         int answer = skill_trees.length;
 
         for (String skill_tree : skill_trees) {
@@ -21,10 +19,7 @@ public class SkillTree {
                 }
             }
         }
-
-        System.out.println(answer);
-
-
+        return answer;
     }
 }
 

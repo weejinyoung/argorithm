@@ -18,7 +18,6 @@ public class PinaryNumber {
             return answer;
         } else {
             for (int i = 2; N >= (2 * i) - 1; i++) {
-                System.out.println((N - i) + " 이 N-i 이고 " + (i - 1) + " 이 i-1 입니다.");
                 answer += combination(N - i, i - 1);
             }
         }
