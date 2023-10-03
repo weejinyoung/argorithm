@@ -10,7 +10,7 @@ class RotatingParentheses {
             String str = s.substring(i,i+1);
             queue.add(str);
         }
-        
+
         for(int i = 0; i < s.length(); i++){
             String firstStr = queue.poll();
             queue.add(firstStr);
