@@ -5,8 +5,6 @@ import java.util.PriorityQueue;
 
 public class AligningCards {
 
-
-
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         PriorityQueue<Integer> pq = new PriorityQueue<>();
@@ -27,9 +25,6 @@ public class AligningCards {
 
         System.out.println(answer);
     }
-
-
-
 
 
 }
