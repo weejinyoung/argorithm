@@ -23,7 +23,7 @@ public class StartLink {
 
     static int bfs() {
         int result = -1;
-        Queue<Integer> q = new LinkedList();
+        Queue<Integer> q = new LinkedList<>();
         boolean[] visited = new boolean[F + 1];
 
         q.add(S);
