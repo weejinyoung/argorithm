@@ -1,6 +1,8 @@
+package 프로그래머스;
+
 import java.util.*;
 
-class Solution {
+class Pro시소짝꿍 {
     int len;
     public long solution(int[] w) {
         long answer = 0;
