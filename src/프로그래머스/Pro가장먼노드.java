@@ -5,7 +5,7 @@ import java.util.*;
 public class Pro가장먼노드 {
 
     private static Map<Integer, List<Integer>> graph = new HashMap<>();
-    private static Map<Integer, List<Integer>> depthMap = new HashMap<>();
+    private static Map<Integer, Integer> depthMap = new HashMap<>();
 
     public int solution(int n, int[][] edges) {
 
@@ -21,11 +21,12 @@ public class Pro가장먼노드 {
         return (bfs(n));
     }
 
-    private static void addDepthMap(int depth, int target) {
+    private static void addDepthMap(int depth) {
         if (!depthMap.containsKey(depth)) {
-            depthMap.put(depth, new ArrayList<>());
+            depthMap.put(depth, 0);
         }
-        depthMap.get(depth).add(target);
+        int count = depthMap.get(depth);
+        depthMap.replace(depth, count + 1);
     }
 
     private static int bfs(int n) {
@@ -45,12 +46,12 @@ public class Pro가장먼노드 {
                     if (!visited[neighbor]) {
                         queue.add(neighbor);
                         visited[neighbor] = true;
-                        addDepthMap(depth, neighbor);
+                        addDepthMap(depth);
                     }
                 }
             }
             depth++;
         }
-        return depthMap.get(depth - 2).size();
+        return depthMap.get(depth - 2);
     }
 }
