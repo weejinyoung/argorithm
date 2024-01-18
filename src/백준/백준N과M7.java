@@ -11,7 +11,6 @@ public class 백준N과M7 {
     private static int N, M;
     private static int[] inputs;
     private static int[] arr;
-    private static boolean[] visited;
     private static StringBuilder sb = new StringBuilder();
 
     private static void backtracking(int depth) {
@@ -34,7 +33,6 @@ public class 백준N과M7 {
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
         arr = new int[N];
-        visited = new boolean[N];
         inputs = new int[N];
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
