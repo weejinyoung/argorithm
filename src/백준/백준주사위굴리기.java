@@ -39,7 +39,7 @@ public class 백준주사위굴리기 {
         int up = dice[4];
         int down = dice[5];
         switch (order) {
-            case 1 : {
+            case 1 -> {
                 dice[0] = up;
                 dice[1] = down;
                 dice[4] = west;
@@ -51,9 +51,8 @@ public class 백준주사위굴리기 {
                     map[x][y + 1] = 0;
                 }
                 y++;
-                break;
             }
-            case 2 : {
+            case 2 -> {
                 dice[0] = down;
                 dice[1] = up;
                 dice[4] = east;
@@ -65,9 +64,8 @@ public class 백준주사위굴리기 {
                     map[x][y - 1] = 0;
                 }
                 y--;
-                break;
             }
-            case 3 : {
+            case 3 -> {
                 dice[2] = down;
                 dice[3] = up;
                 dice[4] = south;
@@ -79,9 +77,8 @@ public class 백준주사위굴리기 {
                     map[x - 1][y] = 0;
                 }
                 x--;
-                break;
             }
-            case 4 : {
+            case 4 -> {
                 dice[2] = up;
                 dice[3] = down;
                 dice[4] = north;
