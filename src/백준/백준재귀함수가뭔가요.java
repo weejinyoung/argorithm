@@ -39,5 +39,6 @@ public class 백준재귀함수가뭔가요 {
         N = Integer.parseInt(br.readLine());
         System.out.println(START_SENTENCE);
         recursion(N);
+        br.close();
     }
 }
