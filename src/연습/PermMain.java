@@ -26,7 +26,8 @@ public class PermMain {
             visited[i] = false;
         }
     }
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
+        C = 0;
         perm(0);
         System.out.println(C);
     }
