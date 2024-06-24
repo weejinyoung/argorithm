@@ -3,7 +3,6 @@ package 유레카.a0624stackqueue;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayDeque;
 import java.util.Stack;
 
 public class BJ10773 {
