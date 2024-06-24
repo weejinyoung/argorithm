@@ -1,4 +1,4 @@
-package 연습;
+package 유레카.a0621combsubs;
 
 import java.io.*;
 import java.util.*;
