@@ -1,6 +1,5 @@
 package 유레카.a0624stackqueue;
 
-import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
