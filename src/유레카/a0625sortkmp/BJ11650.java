@@ -22,10 +22,7 @@ public class BJ11650 {
         }
         Arrays.sort(input, (o1, o2) -> o1[0] == o2[0] ? compare(o1[1], o2[1]) : compare(o1[0], o2[0]));
         StringBuilder sb = new StringBuilder();
-        for (int[] element : input) {
-            sb.append(element[0]).append(" ").append(element[1]).append("\n");
-        }
-        sb.deleteCharAt(sb.length() - 1);
-        System.out.println(sb);
+        System.out.println(sb.deleteCharAt(sb.length() - 1));
+        Arrays.stream(input).forEach((o) -> sb.append(o[0]).append(" ").append(o[1]).append("\n"));
     }
 }
