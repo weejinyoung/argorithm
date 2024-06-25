@@ -57,12 +57,8 @@ public class BJ2468 {
             StringTokenizer st = new StringTokenizer(br.readLine(), " ");
             for (int j = 0; j < N; j++) {
                 map[i][j] = Integer.parseInt(st.nextToken());
-                if (map[i][j] > max) {
-                    max = map[i][j];
-                }
-                if (map[i][j] < min) {
-                    min = map[i][j];
-                }
+                max = Math.max(max, map[i][j]);
+                min = Math.min(min, map[i][j]);
             }
         }
         getAnswer();
