@@ -3,6 +3,8 @@ package 유레카.a0627greedy;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 public class BJ11047 {
@@ -19,9 +21,7 @@ public class BJ11047 {
         int rest = K;
         int count = 0;
         for (int i = N - 1; i >= 0; i--) {
-            if (coins[i] > rest) {
-                continue;
-            }
+            if (coins[i] > rest) continue;
             count += rest / coins[i];
             rest = rest % coins[i];
         }
