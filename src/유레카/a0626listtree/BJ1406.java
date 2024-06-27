@@ -1,5 +1,7 @@
 package 유레카.a0626listtree;
 
+import org.w3c.dom.Node;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -35,6 +37,10 @@ public class BJ1406 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         List<String> list = new LinkedList<>(Arrays.asList(br.readLine().split("")));
         input = list.listIterator();
+
+        ArrayDeque<Integer> aq = new ArrayDeque<>();
+        Stack<Integer> s = new Stack<>();
+
         while (input.hasNext()) {
             input.next();
         }
