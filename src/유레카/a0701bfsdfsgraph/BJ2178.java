@@ -1,4 +1,4 @@
-package 유레카.a0701bfsdfs;
+package 유레카.a0701bfsdfsgraph;
 
 import java.io.BufferedReader;
 import java.io.IOException;
