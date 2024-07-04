@@ -1,12 +1,11 @@
-package 유레카.a0703prim;
+package 유레카.a0704dijkstra;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.PriorityQueue;
 import java.util.Scanner;
 
 
-public class PrimPQMain {
+public class PrimMain {
 
     static int N;
     static List<Integer>[] g;
@@ -26,26 +25,29 @@ public class PrimPQMain {
         boolean[] v = new boolean[N];
         int[] w = new int[N];
         for(int i = 0; i < N; i++) w[i] = Integer.MAX_VALUE;
-        PriorityQueue<int[]> pq = new PriorityQueue<>((o1, o2) -> Integer.compare(o1[1], o2[1]));
-        pq.offer(new int[] {0,  w[0]});
-        w[0] = 0;
+
         int sum = 0, cnt = 0;
-        while(!pq.isEmpty()) {
-            int[] vc = pq.poll();
-            int minVertex = vc[0];
-            int min = vc[1];
+        w[0] = 0;
+        for (int i = 0; i < N; i++) {
+            int min = Integer.MAX_VALUE;
+            int minVertex = -1;
 
-            if(v[minVertex]) continue;
+            // 최소 가중치 간선 찾기
+            for (int j = 0; j < N; j++) {
+                if (!v[j] && min > w[j]) {
+                    min = w[j];
+                    minVertex = j;
+                }
+            }
+
+            // 최소 가중치 간선
             v[minVertex] = true;
-
-            sum+=min;
-
+            sum += min;
             if(cnt++ == N-1) break;
 
             for (int[] j : g[minVertex]) {
                 if (!v[j[0]] && w[j[0]] > j[1]) {
                     w[j[0]] = j[1];
-                    pq.offer(new int[] {j[0], w[j[0]]});
                 }
             }
         }

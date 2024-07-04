@@ -1,4 +1,4 @@
-package 유레카.a0703prim;
+package 유레카.a0704dijkstra;
 
 import java.util.ArrayList;
 import java.util.List;

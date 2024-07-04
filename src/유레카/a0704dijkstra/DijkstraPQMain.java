@@ -1,4 +1,4 @@
-package 유레카.a0703prim;
+package 유레카.a0704dijkstra;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.PriorityQueue;
 import java.util.Scanner;
 
 
-public class PrimPQMain {
+public class DijkstraPQMain {
 
     static int N;
     static List<Integer>[] g;
@@ -24,12 +24,12 @@ public class PrimPQMain {
         }
         
         boolean[] v = new boolean[N];
-        int[] w = new int[N];
-        for(int i = 0; i < N; i++) w[i] = Integer.MAX_VALUE;
+        int[] dist = new int[N];
+        for(int i = 0; i < N; i++) dist[i] = Integer.MAX_VALUE;
         PriorityQueue<int[]> pq = new PriorityQueue<>((o1, o2) -> Integer.compare(o1[1], o2[1]));
-        pq.offer(new int[] {0,  w[0]});
-        w[0] = 0;
-        int sum = 0, cnt = 0;
+        pq.offer(new int[] {0,  dist[0]});
+        dist[0] = 0;
+
         while(!pq.isEmpty()) {
             int[] vc = pq.poll();
             int minVertex = vc[0];
@@ -38,18 +38,16 @@ public class PrimPQMain {
             if(v[minVertex]) continue;
             v[minVertex] = true;
 
-            sum+=min;
-
-            if(cnt++ == N-1) break;
+            if (minVertex == N - 1) break;
 
             for (int[] j : g[minVertex]) {
-                if (!v[j[0]] && w[j[0]] > j[1]) {
-                    w[j[0]] = j[1];
-                    pq.offer(new int[] {j[0], w[j[0]]});
+                if (!v[j[0]] && dist[j[0]] > min + j[1]) {
+                    dist[j[0]] = min + j[1];
+                    pq.offer(new int[] {j[0], dist[j[0]]});
                 }
             }
         }
-        System.out.println(sum);
+        System.out.println(dist[N - 1]);
         sc.close();
     }
 
